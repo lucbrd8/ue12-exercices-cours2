@@ -269,7 +269,7 @@ print(funny_checkerboard(5))  # attendu: [[1. 0. 1. 0. 1.]
 
 # %%
 def mean(arr):
-    pass  # 👈 Insérez le code ici
+    return np.mean(arr)  # 👈 Insérez le code ici
 
 
 # %% [markdown]
@@ -280,7 +280,7 @@ def mean(arr):
 
 # %%
 def sum_odd_columns(arr):
-    pass  # 👈 Insérez le code ici
+    return np.sum(arr[:][1::2])  # 👈 Insérez le code ici
 
 
 print(sum_odd_columns(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: 15
@@ -290,11 +290,9 @@ print(sum_odd_columns(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: 
 #
 # Compléter la fonction `max_per_line` pour qu'elle retourne un tableau contenant l'élément maximal de chaque ligne du tableau d'entrée.
 # Le tableau ne doit pas être vide.
-
-
 # %%
 def max_per_line(arr):
-    pass  # 👈 Insérez le code ici
+    return np.array([np.max(arr[i])for i in range(len(arr))])# 👈 Insérez le code ici
 
 
 print(max_per_line(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: [3 6 9]
@@ -307,7 +305,7 @@ print(max_per_line(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: [3 
 
 # %%
 def min_per_column(arr):
-    pass  # 👈 Insérez le code ici
+    return   # 👈 Insérez le code ici
 
 
 print(min_per_column(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])))  # attendu: [1 2 3]
