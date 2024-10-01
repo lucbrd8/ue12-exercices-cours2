@@ -223,7 +223,8 @@ print(get_center(np.arange(1, 26).reshape(5, 5)))  # attendu: [[ 7  8  9]
 
 # %%
 def swap_first_rows(arr):
-     # 👈 Insérez le code ici
+    row1,row2=np.copy(arr[0]),np.copy(arr[1])
+    arr[0],arr[1]=row2,row1
     return arr
 
 print(swap_first_rows(np.array([[1, 2], [3, 4], [5, 6]])))  # attendu: [[3 4]
@@ -241,7 +242,13 @@ print(swap_first_rows(np.array([[1, 2], [3, 4], [5, 6]])))  # attendu: [[3 4]
 
 # %%
 def funny_checkerboard(size):
-    pass  # 👈 Insérez le code ici
+    checkerboard=np.zeros((size,size))
+    ligne,colonne=np.indices((size,size))
+    checkerboard[1::2,1::2]=1
+    checkerboard[::2,::2]=ligne[::2,::2]+1
+    return checkerboard
+
+
 
 
 print(funny_checkerboard(5))  # attendu: [[1. 0. 1. 0. 1.]
