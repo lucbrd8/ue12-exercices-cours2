@@ -109,8 +109,8 @@ print(square(np.array([1, 2, 3, 4, 5])))  # attendu: [ 1  4  9 16 25]
 
 # %%
 def sin_values():
-    list=np.arange(0,2*np.pi,0.1)
-    return np.sin(list)  # 👈 Insérez le code
+    arr=np.arange(0,2*np.pi+0.03,0.1)
+    return np.sin(arr)  # 👈 Insérez le code
 
 
 print(
@@ -147,6 +147,7 @@ print(
 
 
 # %%
+import numpy as np
 def g(x):
     result = np.zeros_like(x)
     for i in range(len(x)):
@@ -158,7 +159,9 @@ def g(x):
 
 
 def g_vectorized(x):
-    pass  # 👈 Insérez le code ici
+    result=np.zeros_like(x)
+    result=np.where(x>0,np.square(x),x)
+    return result# 👈 Insérez le code ici
 
 
 print(g_vectorized(np.array([1, -2, 3, -4, 5])))  # attendu: [ 1 -2  9 -4 25]
@@ -174,7 +177,8 @@ print(g_vectorized(np.array([1, -2, 3, -4, 5])))  # attendu: [ 1 -2  9 -4 25]
 
 # %%
 def select_even(arr):
-    pass  # 👈 Insérez le code ici
+    return arr[np.where(arr%2==0)]
+      # 👈 Insérez le code ici
 
 
 print(
@@ -188,8 +192,9 @@ print(
 
 
 # %%
+import numpy as np
 def replace_negatives(arr):
-    pass  # 👈 Insérez le code ici
+    return np.where(arr>=0,arr,0)  # 👈 Insérez le code ici
 
 
 print(replace_negatives(np.array([1, -2, 3, -4, 5])))  # attendu: [1 0 3 0 5]
@@ -203,7 +208,7 @@ print(replace_negatives(np.array([1, -2, 3, -4, 5])))  # attendu: [1 0 3 0 5]
 
 # %%
 def get_center(arr):
-    pass  # 👈 Insérez le code ici
+    return arr[1:len(arr)-1,1:len(arr[0])-1]  # 👈 Insérez le code ici
 
 
 print(get_center(np.arange(1, 26).reshape(5, 5)))  # attendu: [[ 7  8  9]
@@ -218,8 +223,8 @@ print(get_center(np.arange(1, 26).reshape(5, 5)))  # attendu: [[ 7  8  9]
 
 # %%
 def swap_first_rows(arr):
-    pass  # 👈 Insérez le code ici
-
+     # 👈 Insérez le code ici
+    return arr
 
 print(swap_first_rows(np.array([[1, 2], [3, 4], [5, 6]])))  # attendu: [[3 4]
 #                                                                       [1 2]
